@@ -1,2 +1,2 @@
-# learnstsff
+# learnstuff
 Tiny Learning Projects
