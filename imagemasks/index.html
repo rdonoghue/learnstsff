@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Jost:wght@300&family=Nanum+Myeongjo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="stampholder">
+      <div class="holder">
+        <img class="stamp stampimg" src="assets/shipwreck.png" />
+      </div>
+      <div class="holder">
+        <div class="stamp2"></div>
+      </div>
+      <div class="holder">
+        <div class="stamp3"></div>
+        <p class="caption">
+          Mixing border radius number for corners to get this kind of card
+          effect. I dig it.
+        </p>
+      </div>
+      <div class="holder">
+        <div class="stamp4">
+          <div class="innerstamp">foo</div>
+        </div>
+      </div>
+      <div class="holder">
+        <div class="stamp5"></div>
+      </div>
+      <div class="holder">
+        <div class="button"></div>
+        <p class="caption">
+          Small warping to the text as it comes in, but I really like the effect
+          of coming in from one side and going out the other. Got this from a
+          <a href="https://youtube.com/shorts/TgOWjuOweHQ?si=Adc-651IBZgKyqdr"
+            >Youtube video</a
+          >
+        </p>
+      </div>
+      <div class="holder">
+        <div class="wrapper">
+          <img id="slide" src="assets/shipwreck.png" />
+        </div>
+        <p class="caption">
+          Ok, this one slides in from "offscreen", which means we don't get any
+          warping from scaling, but we can't do the
+          enter-from-right-exit-from-left trick.
+        </p>
+      </div>
+      <div class="holder">
+        <div class="wrapper stamp">
+          <img id="slide" src="assets/shipwreck.png" />
+        </div>
+        <p class="caption">
+          if I add the border effect, it's not sliding in far enough. How to
+          fix?
+        </p>
+      </div>
+      <div class="holder">
+        <div class="wrapper2 stamp">
+          <img id="slide" src="assets/shipwreck.png" />
+        </div>
+        <p class="caption">
+          Ok, created a second style that has the hover position at the padding
+          value, and that works, but it feels clunky. Feels like I should be
+          able to do it within one style. Could definitely do it with
+          javascript, but that kind of defeats the point here.
+        </p>
+      </div>
+    </div>
+    <h1>Ok, finally time to get into funky patterns</h1>
+    <div class="stampholder">
+      <div class="holder">
+        <div class="showcase bg1"></div>
+        <p class="caption"><pre>  background: repeating-linear-gradient(
+          45deg,
+          var(--color1) 0 10px,
+          var(--color3) 0 20px
+        );</pre></p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg2"></div>
+        <p class="caption"><pre>
+          background: repeating-linear-gradient(
+            45deg,
+            var(--color1) 0 20px,
+            var(--color3) 0 50px
+          );
+        </pre></p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg3"></div>
+        <p class="caption">
+          <pre>
+            background-image: linear-gradient(90deg, 
+            transparent 50%, var(--color4) 50%);
+            background-size: 50px 50px;
+          </pre>
+          So I think I get this, but
+        </p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg4"></div>
+        <p class="caption">
+          <pre>  background-image: linear-gradient(90deg, 
+            transparent 50%, var(--color4) 50%);
+            background-size: 5px 50px;</pre>
+            Doesn't behave as I expect.  I think the size may be the tile? Lets' test that by doubling it
+        </p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg5"></div>
+        <p class="caption">
+          <pre>background-size: 100px 100px;</pre>
+          Yep, it's the tile.</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg6"></div>
+        <p class="caption">Ok, so if I were to make the background a circle, I could tile it with background size. I presume that's radial-gradient?</p>
+        <pre>  background-image: radial-gradient(
+          var(--color2) 50%, transparent 50%);
+        </pre>
+      </div>
+      <div class="holder">
+        <div class="showcase bg7"></div>
+        <p class="caption">7. adding in size totally works, but takes a bit of work to try to make sure it all lines up nicely.  any trick for offsetting?</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg8"></div>
+        <p class="caption">Ok, let's check for the answer and try a checkerboard. This seems complicated, and if I change the size, the result is quite unpredictable.  I need to figure out the underlying logic here. </p>
+        <pre>
+background-image: 
+  linear-gradient(45deg, #ccc 25%, transparent 25%),
+  linear-gradient(-45deg, #ccc 25%, transparent 25%),
+  linear-gradient(45deg, transparent 75%, #ccc 75%),
+  linear-gradient(-45deg, transparent 75%, #ccc 75%);
+background-size: 20px 20px;
+background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        </pre>
+      </div>
+      <div class="holder">
+        <div class="showcase bg9"></div>
+        <p class="caption">ok, let's make these things bigger so I can see them (unexpected lesson - negative vars are tricky)<br></p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg10"></div>
+        <p class="caption">Ok, if I mess with the colors of one element, that reveals these are actually triangles. Fascinating.</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg11"></div>
+        <p class="caption">ok, how do I make ONE unit?.  Firs trick is that it's actually a 2x2 grid, as this illustrates.</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg12"></div>
+        <p class="caption">Ok, added 2nd element, and it looks like the position has kicked in!</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg13"></div>
+        <p class="caption">13. coloring each element</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg14"></div>
+        <p class="caption">14. no color, but removing size - ok, this is weird - I would have expected this to look like 13, only gray.  So what am I missing about size? Hrm.  The CSS seem the same, so is there a typo? hrm.  Background position isn't doing anything on 13.  why?</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg15"></div>
+        <p class="caption">15. ah ha.  Missing comma. With that fixed, we get the same pattern</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg16"></div>
+        <p class="caption">16. ok, let's add in a size, but the wrong one. Should be 8rem, so we'll try 4? different weirdness</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg17"></div>
+        <p class="caption">17. What it looks like at the right size (8rem).  Ok, I admit, I kind of what to see if I can animate this transition.</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg18"></div>
+        <p class="caption">18. Ok, that looks awesome and once I understand this stuff more, I am 100% going to use it. I'm getting closer</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg19"></div>
+        <p class="caption">19.  same as 18, but even smaller tiles</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg20"></div>
+        <p class="caption">20. what does a non-divisible tile size look like?  Still cool, but junky randomness.  would definitely require more knowledge before I try this.</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg21"></div>
+        <p class="caption">21. like 18, but adding some color shift, just for fun. Looks cool, but not sure how to get it to smooth out.  Task for another day.</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg22"></div>
+        <p class="caption">ok, so the checkerboard was kind of sleight of hand with triangles, so let's step back and see if we can use position with #7.  First, repeating 7 so I don't need to scroll. </p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg23"></div>
+        <p class="caption">23. now with a half rem offset. Works!</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg24"></div>
+        <p class="caption">24.Adding a second radial element did nothing I could see, but adding a linear element gets this, which is kind of cool. </p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg25"></div>
+        <p class="caption">25.  Ok, gonna try 24 but with 2 position values.  That gets some nice offset, so my next question is whether I can do *size*  </p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg26"></div>
+        <p class="caption">26.  Ah ha. trying radial again, and that illustrates the problem is definitely that I didn't offset it the first time.  Now I MUST try size. </p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg27"></div>
+        <p class="caption">27. ok, what happens if I just put in a second size?  Answer:  Shit breaks. looking at things, the real trick here is in shaping the transparency. so, let's try moving that.</p>
+      </div>
+
+
+      <div class="holder">
+        <div class="showcase bg28"></div>
+        <p class="caption">28. Ok, if I planned right, this will look like rings</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg29"></div>
+        <p class="caption">29.  Whups. Need to take the offset back out.  That's 50% and 75% - apparently 75% is what gets the circle to fit in the square.  Let's try some others, and maybe match the center to the background?</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg30"></div>
+        <p class="caption">Ok, bigger circles get me the starburst pattern, which is definitely fun.</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg31"></div>
+        <p class="caption">smaller rings is getting me a small gradient, though I don't THINK that should be happening.</p>
+      </div>
+
+
+      <div class="holder">
+        <div class="showcase bg32"></div>
+        <p class="caption">tried the "Circle" fill, and that seems to get me circles of different sizes, so that's nice. </p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg33"></div>
+        <p class="caption">33. ok, there are two circles on this, but they don't seem to tile like the other kind.  something is up.</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg34"></div>
+        <p class="caption">34. Grabbing a waves recipe - looking at it, somehow this got the 2 radial circles to play nice</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg35"></div>
+        <p class="caption">35. Messing around with 34</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg36"></div>
+        <p class="caption">wait, can I make rings with percentage bands? Ah ha. the trick is that the percentage stack!</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg37"></div>
+        <p class="caption">37. Blank</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg38"></div>
+        <p class="caption">38. If I do the same banding thing with linear gradients, I can cmake grid elements (I think)</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg39"></div>
+        <p class="caption">Grid I Hope</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg40"></div>
+        <p class="caption">OK, let's build a zigzag.  First, the diagonal.</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg41"></div>
+        <p class="caption">see how the base diagonal tiles - the corners are clearly a problem.</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg42"></div>
+        <p class="caption">adding an offset - nope</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg43"></div>
+        <p class="caption">43. what if I grab one of the early ones and tile size it? Ok, that just gets weird - almost to maryland flag territory. Hrm.  THough this does suggest I could do a parallelogram.  the correct answer is more triangles, but that is less exciting</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg44"></div>
+        <p class="caption">44. Blank</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg45"></div>
+        <p class="caption">Got this one from <a href="https://projects.verou.me/css3patterns/#weave">This Site</a> and I quite like it.</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg46"></div>
+        <p class="caption">46. This one is hard core (<a href="https://projects.verou.me/css3patterns/#seigaiha">link</a>) and I want to play with the colors and I especially want to know if I could add a drop shadow effect at the edge with a little darkness?</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg47"></div>
+        <p class="caption">47. gotta try it</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg48"></div>
+        <p class="caption">48. Trying some blue.  Could probably play with width too</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg49"></div>
+        <p class="caption">Blueprint grid from <a href="https://projects.verou.me/css3patterns/#blueprint-grid">that same site</a></p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg50"></div>
+        <p class="caption">Hopping to a <a href="https://css-pattern.com">different site for a few more.</a></p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg51"></div>
+        <p class="caption">Temami Afif</p>
+      </div>
+
+
+      <div class="holder">
+        <div class="showcase bg52"></div>
+        <p class="caption">Temami Afif</p>
+      </div>
+
+
+      <div class="holder">
+        <div class="showcase bg53"></div>
+        <p class="caption">Temami Afif</p>
+      </div>
+
+
+      <div class="holder">
+        <div class="showcase bg54"></div>
+        <p class="caption">Temami Afif</p>
+      </div>
+
+
+      <div class="holder">
+        <div class="showcase bg55"></div>
+        <p class="caption">55. Temami Afif - this one does the shadows SO WELL, I really need to figure out how and see if I can replicate it in 47 and 48, which are ok, but could be better </p>
+      </div>
+
+
+      <div class="holder">
+        <div class="showcase bg56">
+          <div class="inset1">3rem</div>
+
+        </div>
+        <p class="caption">total aside here to try a border thing</p>
+      </div>
+
+
+      <div class="holder">
+        <div class="showcase bg56">
+          <div class="inset2">3rem - padding<br>Seems like it's a smoother match.  Good for cards!</div>
+
+        </div>
+        <p class="caption">total aside here to try a border thing</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg1">
+        </div>
+        <p class="caption">Blank</p>
+      </div>
+
+    </div>
+  </body>
+</html>
