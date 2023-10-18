@@ -1,0 +1,487 @@
+.box2 {
+  display: block;
+  height: 425px;
+  width: 425px;
+  border: 2px solid black;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+.ballback {
+  background-color: navy;
+  clip-path: circle(50% at 0 0);
+  transition: all 400ms ease;
+  border: 3px solid pink;
+}
+
+.ballback:hover {
+  clip-path: circle(100%);
+}
+
+.ball {
+  height: 30px;
+  width: 30px;
+  background-color: navy;
+  clip-path: circle(50%);
+  position: absolute;
+  animation: 5s bounce infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    top: 10px;
+    left: 10px;
+  }
+
+  50% {
+    top: 385px;
+    left: 385px;
+  }
+
+  100% {
+    top: 10px;
+    left: 10px;
+  }
+}
+
+.smallbox {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  background-color: gray;
+  top: 20px;
+  left: 20px;
+}
+
+.mote1 {
+  height: 6px;
+  width: 6px;
+  background-color: yellow;
+  clip-path: circle(50%);
+  position: absolute;
+  top: calc(50% - 3px);
+  left: calc(50% - 3px);
+
+  /* animation: 5s bounce infinite ease-in-out; */
+}
+
+.ball2 {
+  height: 30px;
+  width: 30px;
+
+  clip-path: circle(50%);
+  position: absolute;
+  /* animation: 10s orbit infinite ease-in-out; */
+}
+
+.ball3 {
+  height: 8px;
+  width: 8px;
+  clip-path: circle(50%);
+  position: absolute;
+  background-color: red;
+  top: calc(50% - 4px);
+  left: calc(50% - 4px);
+}
+
+.core {
+  background-color: navy;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+}
+
+.orbit {
+  background-color: orange;
+  position: absolute;
+}
+
+.orbit1 {
+  background-color: orange;
+
+  top: calc(50% - 15px - (100px * cos(0)));
+  left: calc(50% - 15px + (100px * sin(0)));
+}
+
+.orbit2 {
+  background-color: pink;
+
+  top: calc((50% - 15px) - (100px * cos(90deg)));
+  left: calc((50% - 15px) + (100px * sin(90deg)));
+}
+
+.orbit3 {
+  background-color: yellowgreen;
+
+  top: calc((50% - 15px) - (100px * cos(180deg)));
+  left: calc((50% - 15px) + (100px * sin(180deg)));
+}
+
+/* .orbit3 {
+  background-color: pink;
+
+  top: calc(50% - 15px - 100px * cos(60));
+  left: calc(50% - 15px + 100px * sin(60));
+}
+.orbit4 {
+  top: calc(50% - 15px - 100px * cos(90));
+  left: calc(50% - 15px + 100px * sin(90));
+}
+.orbit5 {
+  top: calc(50% - 15px - 100px * sin(120));
+  left: calc(50% - 15px + 100px * cos(120));
+}
+.orbit6 {
+  top: calc(50% - 15px - 100px * sin(150));
+  left: calc(50% - 15px + 100px * cos(150));
+}
+
+.orbit7 {
+  top: calc(50% - 15px - 100px * sin(180));
+  left: calc(50% - 15px + 100px * cos(180));
+} */
+
+.orbiter {
+  --angle: 360deg;
+
+  position: absolute;
+  background-color: orange;
+
+  top: calc(50% - 15px - (100px * cos(var(--angle))));
+  left: calc(50% - 15px + (100px * sin(var(--angle))));
+  animation: 2s rotate infinite ease-in-out;
+}
+
+@keyframes rotate {
+  0% {
+    --angle: 0deg;
+  }
+
+  10% {
+    --angle: 36deg;
+  }
+  20% {
+    --angle: 72deg;
+  }
+  30% {
+    --angle: 108deg;
+  }
+  40% {
+    --angle: 144deg;
+  }
+  50% {
+    --angle: 180deg;
+  }
+  60% {
+    --angle: 216deg;
+  }
+  70% {
+    --angle: 252deg;
+  }
+  80% {
+    --angle: 288deg;
+  }
+  90% {
+    --angle: 324deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+.translator {
+  --angle: 360deg;
+
+  position: absolute;
+  background-color: orange;
+
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  animation: 5s translatorbit2 infinite ease;
+  animation-timing-function: linear;
+}
+
+@keyframes translatorbit {
+  0% {
+    transform: translate(calc(cos(0deg) * 100px), calc(sin(0deg) * 100px));
+  }
+  25% {
+    transform: translate(calc(cos(90deg) * 100px), calc(sin(90deg) * 100px));
+  }
+  50% {
+    transform: translate(calc(cos(180deg) * 100px), calc(sin(180deg) * 100px));
+  }
+  75% {
+    transform: translate(calc(cos(270deg) * 100px), calc(sin(270deg) * 100px));
+  }
+  100% {
+    transform: translate(calc(cos(360deg) * 100px), calc(sin(360deg) * 100px));
+  }
+}
+
+@keyframes translatorbit2 {
+  0% {
+    transform: translate(calc(cos(0deg) * 100px), calc(sin(0deg) * 100px));
+  }
+
+  5% {
+    transform: translate(calc(cos(18deg) * 100px), calc(sin(18deg) * 100px));
+  }
+
+  10% {
+    transform: translate(calc(cos(36deg) * 100px), calc(sin(36deg) * 100px));
+  }
+
+  15% {
+    transform: translate(calc(cos(54deg) * 100px), calc(sin(54deg) * 100px));
+  }
+
+  20% {
+    transform: translate(calc(cos(72deg) * 100px), calc(sin(72deg) * 100px));
+  }
+
+  25% {
+    transform: translate(calc(cos(90deg) * 100px), calc(sin(90deg) * 100px));
+  }
+
+  30% {
+    transform: translate(calc(cos(108deg) * 100px), calc(sin(108deg) * 100px));
+  }
+
+  35% {
+    transform: translate(calc(cos(126deg) * 100px), calc(sin(126deg) * 100px));
+  }
+
+  40% {
+    transform: translate(calc(cos(144deg) * 100px), calc(sin(144deg) * 100px));
+  }
+
+  45% {
+    transform: translate(calc(cos(162deg) * 100px), calc(sin(162deg) * 100px));
+  }
+  50% {
+    transform: translate(calc(cos(180deg) * 100px), calc(sin(180deg) * 100px));
+  }
+  55% {
+    transform: translate(calc(cos(198deg) * 100px), calc(sin(198deg) * 100px));
+  }
+
+  60% {
+    transform: translate(calc(cos(216deg) * 100px), calc(sin(216deg) * 100px));
+  }
+
+  65% {
+    transform: translate(calc(cos(234deg) * 100px), calc(sin(234deg) * 100px));
+  }
+
+  70% {
+    transform: translate(calc(cos(252deg) * 100px), calc(sin(252deg) * 100px));
+  }
+
+  75% {
+    transform: translate(calc(cos(270deg) * 100px), calc(sin(270deg) * 100px));
+  }
+
+  80% {
+    transform: translate(calc(cos(288deg) * 100px), calc(sin(288deg) * 100px));
+  }
+
+  85% {
+    transform: translate(calc(cos(306deg) * 100px), calc(sin(306deg) * 100px));
+  }
+
+  90% {
+    transform: translate(calc(cos(324deg) * 100px), calc(sin(324deg) * 100px));
+  }
+
+  95% {
+    transform: translate(calc(cos(342deg) * 100px), calc(sin(342deg) * 100px));
+  }
+
+  100% {
+    transform: translate(calc(cos(360deg) * 100px), calc(sin(360deg) * 100px));
+  }
+}
+
+.positor {
+  position: absolute;
+  background-color: limegreen;
+
+  object-position: 250px 125px;
+  /* animation: 5s translatorbit2 infinite ease; */
+}
+
+.tracker {
+  offset-path: path("M20,20 C20,100 200,0 200,100");
+  animation: track 3000ms infinite alternate ease-in-out;
+
+  background: cyan;
+}
+@keyframes track {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.deconstruct {
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+  transform-origin: 200% center;
+  position: relative;
+  animation: thingspin 3s linear infinite;
+}
+
+/* What is Transform-origin doing? */
+/* OH!  It's setting the center of the rotation OUTSIDE THE SHAPE! */
+
+/* Ok, need to try this with something else */
+
+.spinsquare {
+  width: 100px;
+  height: 100px;
+  top: calc(50% - 25px);
+  left: calc(50%);
+  transform-origin: top left; /* The Pivot! */
+  position: relative;
+  background-color: limegreen;
+  animation: thingspin 3s linear infinite;
+}
+
+@keyframes despin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.thingee {
+  width: 100px;
+  height: 100px;
+  margin-top: 180px;
+  transform-origin: 200% center;
+  position: relative;
+  animation: thingspin 3s linear infinite;
+}
+thingee:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: blue;
+
+  animation: thingspin 3s linear reverse infinite;
+}
+@keyframes thingspin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.ring {
+  height: 200px;
+  width: 200px;
+
+  clip-path: circle(50%);
+  position: absolute;
+  background-color: rgba(0, 0, 128, 0.3);
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+}
+
+.ball3 {
+  height: 8px;
+  width: 8px;
+  clip-path: circle(50%);
+  position: absolute;
+  background-color: red;
+  top: calc(50% - 4px);
+  left: calc(50% - 4px);
+}
+
+.spinrect {
+  width: 200px;
+  height: 20px;
+  top: calc(50% - 10px);
+  left: calc(50%);
+  transform-origin: left 50%; /* The Pivot! */
+  position: absolute;
+  background-color: limegreen;
+
+  animation: thingspin 3s linear infinite;
+}
+
+@keyframes despin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+/* Ok, this works, though it reveals I'm not quite centering thins qhwere I think I am */
+
+.orbitlist li {
+  list-style-type: none;
+  padding: 0;
+  display: block;
+  position: absolute;
+}
+
+.orbit1 li {
+  top: calc(50% - 15px);
+  left: calc(50% + 100px);
+  transform-origin: -107px center;
+  animation: thingspin 3s linear reverse infinite;
+}
+
+.orbit2 li {
+  top: calc(50% - 15px);
+  left: calc(50% + 100px);
+  transform-origin: -107px center;
+  animation: thingspin 3s linear reverse infinite;
+}
+
+.orbit3 li {
+  top: calc(50% - 15px);
+  left: calc(50% + 100px);
+  transform-origin: -107px center;
+  /* transform: rotate(45deg); */
+  /* transform: rotate(180deg); */
+  animation: thingspin 3s linear reverse infinite;
+}
+
+.orbit4 li {
+  top: calc(50% - 15px);
+  left: calc(50% + 100px);
+  transform-origin: -100px 14px;
+  animation: thingspin 3s linear reverse infinite;
+}
+
+/* .orbit3 li:nth-child(2) {
+  transform: rotate(90deg);
+}
+.orbit3 li:nth-child(3) {
+  transform: rotate(180deg);
+}
+.orbit3 li:nth-child(4) {
+  transform: rotate(270deg);
+} */
+
+.orbitlist li:nth-child(2) {
+  animation-delay: -1s;
+}
+.orbitlist li:nth-child(3) {
+  animation-delay: -2s;
+}
+
+.square {
+  height: 30px;
+  width: 30px;
+
+  /* clip-path: circle(50%); */
+  position: absolute;
+  background-color: blue;
+  /* animation: 10s orbit infinite ease-in-out; */
+}

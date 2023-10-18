@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 
   --background-color: rgb(231, 240, 234);
   --background-color-shift: rgb(216, 230, 221);
@@ -40,4 +41,33 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.toc {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5rem;
+  left: 0rem;
+  width: 20rem;
+  background-color: gray;
+  gap: 1px;
+  /* margin: 1ch 0 1ch 0; */
+}
+
+.toc li {
+  text-decoration: none;
+  display: block;
+  padding: 1ch 2rem 1ch 2rem;
+  width: 18rem;
+  background-color: azure;
+  border: 1px solid black;
+  width: 80%;
+  margin: 1ch;
+}
+
+.toc li:hover {
+  background-color: aquamarine;
+  transition: all 100ms ease;
 }
