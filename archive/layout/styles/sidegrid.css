@@ -1,0 +1,31 @@
+.page {
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  overscroll-behavior: contain;
+}
+
+.sideholder {
+  background-color: azure;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.sidecontent {
+  color: black;
+  padding: 1rem;
+}
+
+.main {
+  /* border: 2px solid red; */
+  width: 100%;
+}
+
+.maincontent {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding: 2rem;
+}
+
+.maincontent p {
+  padding: 1rem;
+}

@@ -1,0 +1,62 @@
+/* This baseline is sourced from Kevin Powell
+Youtube link: https://www.youtube.com/watch?v=cCAtD_BAHNw
+Codepen Source: https://codepen.io/kevinpowell/pen/abMdOpp
+
+Question to self:  This is a solid reset (with width opinions) but no resizing.  I suspect that's deliberate and should probably be a function of the actual page style. 
+
+*/
+
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* dark mode user-agent-styles */
+/* improves punctuation in supported browsers */
+html {
+  color-scheme: dark light;
+  hanging-punctuation: first last;
+}
+
+/* min body height */
+body {
+  min-height: 100svh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Improved heading in supported browsers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* improve readability with max-width on paragraphs and lists */
+/* prevent orphans in supported browsers */
+/* This is definitely the MOST opinionated part of it, and it's a little odd to have this with no margins, but I guess I get it.  */
+p,
+li {
+  max-width: var(--p-max-width, 65ch);
+  text-wrap: pretty;
+}

@@ -1,0 +1,86 @@
+/* source: https://www.w3.org/Style/Examples/007/slideshow.en.html */
+/* BASE APPEARANCE  */
+
+.showbox {
+  display: block;
+  height: 425px;
+  width: 425px;
+  border: 2px solid black;
+  border-radius: 3rem;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+#slideset2 > * {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  animation: 12s autoplay2 infinite ease-in-out;
+}
+
+.showbox > * {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  animation: 16s autoplay2 infinite ease-in-out;
+  padding-left: 2rem;
+}
+
+/* WHen I had 3 slides, this was the timing */
+@keyframes autoplay {
+  0% {
+    top: 100%;
+  }
+  4% {
+    top: 0%;
+  }
+  33.33% {
+    top: 0%;
+  }
+  37.33% {
+    top: -100%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+/* Changed it up for 4 sldies */
+@keyframes autoplay2 {
+  0% {
+    top: 100%;
+  }
+  4% {
+    top: 0%;
+  }
+  25% {
+    top: 0%;
+  }
+  29% {
+    top: -100%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+.card {
+  height: 400px;
+  border: 0.5rem solid white;
+  border-radius: 1rem;
+}
+
+.showbox > *:nth-child(1) {
+  animation-delay: 0s;
+}
+.showbox > *:nth-child(2) {
+  animation-delay: 4s;
+}
+.showbox > *:nth-child(3) {
+  animation-delay: 8s;
+}
+
+.showbox > *:nth-child(4) {
+  animation-delay: 12s;
+}

@@ -1,0 +1,102 @@
+* {
+  --spacer: 0.5rem;
+  --color-background-light: hsl(37, 100%, 92%);
+  --color-background-dark: hsl(180, 100%, 10%);
+  --color-background: rgb(153, 189, 189);
+
+  --background-color-shift: rgb(66, 77, 82);
+  --color-light: rgb(110, 114, 113);
+  --color-dark: rgb(17, 24, 22);
+  --color-text: rgb(226, 226, 226);
+
+  --color-bold: rgb(233, 196, 106);
+  --color-highlight: rgba(233, 196, 106, 0.2);
+
+  --color1: rgb(94, 130, 122);
+  --color2: rgb(42, 157, 143);
+  --color3: rgb(233, 196, 106);
+  --color4: rgb(244, 162, 97);
+  --color5: rgb(231, 111, 81);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacer);
+  width: 100%;
+  background-color: var(--color-background);
+  font-family: Nunito, sans-serif;
+  font-weight: 300;
+
+  /* 
+  Ok, I don't entirely have myhead around light & dark themes straight out of Css.  leaving these in as a reminder to come back to it.
+
+  background-color: light-dark(
+    var(--color-background-light),
+    var(--color-background-dark)
+  ); */
+}
+
+header {
+  display: block;
+  width: 100%;
+  min-height: 4rem;
+  background-color: hsl(120, 93%, 79%);
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+nav {
+  display: block;
+  width: 100%;
+  min-height: 1rem;
+  background-color: hsl(55, 67%, 80%);
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  gap: 0.5rem;
+  margin: 0 auto;
+}
+
+aside {
+  display: block;
+  width: 16rem;
+  min-height: 4rem;
+  background-color: hsl(180, 65%, 81%);
+  padding: 1rem;
+}
+
+aside ul li {
+  display: block;
+  list-style-type: none;
+  margin: 0.25rem auto;
+  width: 90%;
+  background-color: bisque;
+  border-radius: 5px;
+  text-align: center;
+}
+
+aside ul li:hover {
+  background-color: goldenrod;
+}
+
+article {
+  display: block;
+  width: 80%;
+  min-height: 4rem;
+  background-color: hsl(300, 47%, 75%);
+  padding-left: 2rem;
+}
+
+footer {
+  display: block;
+  width: 100%;
+  min-height: 4rem;
+  background-color: hsl(350, 100%, 88%);
+  text-align: center;
+  padding: 1rem;
+}

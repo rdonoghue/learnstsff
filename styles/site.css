@@ -28,7 +28,8 @@
 /* BASE APPEARANCE  */
 
 body {
-  font-family: "Jost", sans-serif;
+  font-family: Nunito, sans-serif;
+  font-weight: 300;
   color: var(--color-text);
   font-size: 1.15rem;
   line-height: 1.75rem;
@@ -42,64 +43,34 @@ body {
   flex-wrap: wrap;
 }
 
-.page {
-  display: grid;
-  grid-template-columns: 20rem 1fr;
-  margin: 0;
-  height: 100%;
-  min-height: 100vh;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
 }
 
-.sideholder {
-  background-color: azure;
+h1 {
+  font-size: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
 }
 
-.sidecontent {
-  color: black;
-  padding: 1rem;
-  background-color: bisque;
-}
-
-.main {
-  /* border: 2px solid red; */
-  min-width: 100%;
-  border: 1px solid teal;
-  padding: 1rem;
-}
-
-.main li {
-  margin-left: 2rem;
-}
-
-.maincontent {
+h2 {
   font-size: 1.5rem;
-  line-height: 2rem;
-  padding: 2rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
 }
 
-.maincontent p {
-  padding: 1rem;
+h3 {
+  font-size: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-.toc {
-  display: flex;
-  flex-direction: column;
-  background-color: gray;
-  gap: 1px;
-}
-
-.toc li {
-  text-decoration: none;
-  display: block;
-  padding: 1ch 2rem 1ch 2rem;
-  background-color: azure;
-  border: 1px solid black;
-  width: 80%;
-  margin: 1ch;
-}
-
-.toc li:hover {
-  --boxwidth: 40px;
-  background-color: aquamarine;
-  transition: all 100ms ease;
+p {
+  padding-top: 0.75rem;
 }

@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --background-color: rgb(67, 97, 153);
+  --background-color-shift: rgb(87, 107, 173);
+  --color-light: hsl(219, 39%, 80%);
+  --color-dark: rgb(17, 24, 22);
+  --color-text: rgb(31, 31, 3);
+
+  --color-bold: rgb(233, 196, 106);
+  --color-highlight: rgba(233, 196, 106, 0.2);
+
+  --color1: rgb(94, 130, 122);
+  --color2: rgb(42, 157, 143);
+  --color3: hsl(43, 64%, 86%);
+  --color4: rgb(244, 162, 97);
+  --color5: rgb(231, 111, 81);
+
+  --stampwidth: 16rem;
+  --stampheight: 16rem;
+  --stamp-padding: 1rem;
+
+  --square: 4rem;
+}
+
+/* BASE APPEARANCE  */
+
+body {
+  font-family: "Jost", sans-serif;
+  color: var(--color-text);
+  font-size: 1.15rem;
+  line-height: 1.75rem;
+  background: linear-gradient(
+    70deg,
+    var(--background-color),
+    var(--background-color-shift)
+  );
+}
+
+header {
+  /* display: flex; */
+  width: 100%;
+  min-height: 4rem;
+  background-color: var(--color-light);
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+header ul.pagehead {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.25rem;
+  padding: 0 2rem;
+}
+
+header ul.pagehead li {
+  display: block;
+  list-style: none;
+  color: blue;
+  border: 2px solid black;
+}
+
+header ul.pagehead li:nth-child(1) {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+header ul.pagehead li:nth-child(3) {
+  grid-column-start: 2;
+  grid-row-start: 0;
+  grid-row-end: 2;
+  text-align: right;
+}
+
+main {
+  /* display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; */
+  padding: 2rem;
+}
+
+/* main .card {
+  height: 30rem;
+  width: 25rem;
+  background-color: var(--color3);
+  border-radius: 10px;
+  padding: 1rem;
+  border: 0.5px solid hsl(0, 1%, 27%);
+  display: flex;
+  flex-direction: column;
+} */
+
+ul.displaycard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+  margin: auto;
+  justify-content: center;
+}
+
+ul.displaycard > li {
+  list-style: none;
+  height: 30rem;
+  width: 25rem;
+  background-color: var(--color3);
+  border-radius: 10px;
+  padding: 1rem;
+  border: 0.5px solid hsl(0, 1%, 27%);
+  display: flex;
+  flex-direction: column;
+  background-image: url("/assets/paper.png");
+  box-shadow: 4px 2px 2px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Jost:wght@300&family=Nanum+Myeongjo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/backgrounds.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="pagetitle"><h2>Background Animations</h2></div>
+      <div><a href="/index.html">Home</a></div>
+    </div>
+    <div class="stampholder">
+      <div class="holder">
+        <div class="roundstamp"></div>
+        <p class="caption">
+          Using clip-path rather than border-radius to make a corner. Note, this
+          will largely remove the border but keep the frame (for clipping
+          purposes), so the behaviors can be pretty different.
+        </p>
+      </div>
+      <div class="holder">
+        <div class="roundstamp-corner"></div>
+        <p class="caption">Mouseover for a fun fill effect</p>
+      </div>
+
+      <div class="holder">
+        <div class="stamp3"></div>
+        <p class="caption">
+          Mixing border radius number for corners to get this kind of card
+          effect. I dig it.
+        </p>
+      </div>
+      <div class="holder">
+        <div class="stamp4">
+          <div class="innerstamp">foo</div>
+        </div>
+      </div>
+      <div class="holder">
+        <div class="stamp5"></div>
+      </div>
+      <div class="holder">
+        <div class="button"></div>
+        <p class="caption">
+          Small warping to the text as it comes in, but I really like the effect
+          of coming in from one side and going out the other. Got this from a
+          <a href="https://youtube.com/shorts/TgOWjuOweHQ?si=Adc-651IBZgKyqdr"
+            >Youtube video</a
+          >
+        </p>
+      </div>
+      <div class="holder">
+        <div class="wrapper">
+          <img id="slide" src="./assets/shipwreck.png" />
+        </div>
+        <p class="caption">
+          Ok, this one slides in from "offscreen", which means we don't get any
+          warping from scaling, but we can't do the
+          enter-from-right-exit-from-left trick.
+        </p>
+      </div>
+      <div class="holder">
+        <div class="wrapper stamp">
+          <img id="slide" src="assets/shipwreck.png" />
+        </div>
+        <p class="caption">
+          if I add the border effect, it's not sliding in far enough. How to
+          fix?<br />
+          CRUD: Moving the page did a number on this. Need to come back to this
+          once I've finished.
+        </p>
+      </div>
+      <div class="holder">
+        <div class="wrapper2 stamp">
+          <img id="slide" src="assets/shipwreck.png" />
+        </div>
+        <p class="caption">
+          Ok, created a second style that has the hover position at the padding
+          value, and that works, but it feels clunky. Feels like I should be
+          able to do it within one style. Could definitely do it with
+          javascript, but that kind of defeats the point here.
+        </p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg16"></div>
+        <p class="caption">
+          diamond patterm using different colors to show th eoverlapping tiles
+        </p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg17"></div>
+        <p class="caption">same thing at 8 rem rather than 4 rem</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg18"></div>
+        <p class="caption">And now, animate the transition between 8 and 4</p>
+      </div>
+      <div class="holder">
+        <div class="showcase bg19"></div>
+        <p class="caption">19. same as 18, but even smaller tiles</p>
+      </div>
+
+      <div class="holder">
+        <div class="showcase bg20"></div>
+        <p class="caption">
+          20. what does a non-divisible tile size look like? Still cool, but
+          junky randomness. would definitely require more knowledge before I try
+          this.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

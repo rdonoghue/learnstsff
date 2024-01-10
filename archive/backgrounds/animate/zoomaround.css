@@ -1,0 +1,58 @@
+.box {
+  display: block;
+  height: 800px;
+  width: 1200px;
+  border: 2px solid black;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem;
+  background-color: aqua;
+}
+
+.ball {
+  height: 30px;
+  width: 30px;
+  clip-path: circle(50%);
+  position: absolute;
+  animation: 5s bounce infinite ease-in-out;
+}
+.jball {
+  height: 30px;
+  width: 30px;
+  clip-path: circle(50%);
+  position: absolute;
+}
+
+.xball {
+  height: 30px;
+  width: 30px;
+  clip-path: circle(50%);
+  position: absolute;
+}
+
+.navyball {
+  background-color: navy;
+}
+
+.redball {
+  background-color: red;
+  top: 30px;
+}
+
+@keyframes bounce {
+  0% {
+    top: 10px;
+    left: 10px;
+  }
+
+  50% {
+    top: 385px;
+    left: 385px;
+  }
+
+  100% {
+    top: 10px;
+    left: 10px;
+  }
+}

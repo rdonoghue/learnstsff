@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Jost:wght@300&family=Nanum+Myeongjo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/orbiter.css" />
+
+    <title>Slides</title>
+  </head>
+  <body><div class="nav">
+    <div class="pagetitle"><h2>Orbiting Animation</h2></div>
+    <div><a href="/index.html">Home</a></div>
+    
+  </div>
+  
+  <div class="setofboxes">
+
+    <div class="box2">
+      <div class="ball"></div>
+      Just moving it back and forth.
+    </div>
+
+    <div class="box2">
+      <div class="smallbox"><div class="mote1"></div></div>
+      <br><br><br>Just looking at a dot in a box.
+    </div>
+
+    <div class="box2">
+      not 100% clear why the ease transition isn't working. it's fine with the
+      bounce - maybe something about the calculations. Is there a way to smooth
+      it, or do I need to make the increments into 1 degree with javascript?
+      <div class="ball2 core"></div>
+      <div class="ball2 orbiter"></div>
+    </div>
+
+    <div class="box2">
+      using the "translate" animation is definitely smoother, but if you look closely, you can see that the circle's approximate with the number of anchor points this currently uses.  It looks smoother than it did with half as many, so I could absolutely do it 1 degree at a time, but I'd need a tool to generate that css, since there's no way I do it by hand. 
+      <div class="ball2 core"></div>
+      <div class="ball2 orbit translator"></div>
+    </div>
+
+    <div class="box2">
+      motion path
+      <div class="ball2 core"></div>
+      <div class="ball2 orbit tracker"></div>
+    </div>
+
+    <div class="box2">
+      something from a code pen I haven't parsed yet
+      <div class="ball2 core"></div>
+      <div class="ball2 orbit thingee"></div>
+    </div>
+
+    <div class="box2">
+      ok, building it reveals the secret sauce is that it's a straight rotation,
+      but the origin is outside of the object, so it orbits that.
+      <div class="ball2 core"></div>
+      <div class="ball2 orbit deconstruct"></div>
+    </div>
+
+    <div class="box2">
+      Trying moving the pivot point just to illustrate
+      <div class="ball2 core"></div>
+      <div class="spinsquare"></div>
+    </div>
+
+    <div class="box2">
+Ok, next, let's set up an LI so that we can apply Nth and animation delay to do several of these? <br>
+Ok, this works, though it reveals I'm not quite centering things where I think I am. also, the delay on start is a little odd - I suspect there's a way to start at the end or middle?     <div class="ball2 core"></div>
+<div class="core"></div>
+      <ul class="orbitlist orbit1">
+        <li><div class="ball2 orbit"></li>
+        <li><div class="ball2 orbit"></li>
+        <li><div class="ball2 orbit"></li>
+      </ul>
+    </div>
+
+    <div class="box2">
+     Managed to get past the lagged start by using negative animation delay, which definitely seems like a good trick.     <div class="ball2 core"></div>
+      <div class="ring core"></div>
+            <ul class="orbitlist orbit2">
+              <li><div class="ball2 orbit"></li>
+              <li><div class="ball2 orbit"></li>
+              <li><div class="ball2 orbit"></li>
+            </ul>
+          </div>
+ 
+
+          <div class="box2">
+Weird rotation is almost certainly about the center point.  Playing around with visualizing that. 
+            <div class="ball3"></div>
+            <div class="ring core"></div>
+            <div class="spinrect"></div>
+          </div>
+
+<div class="box2">
+I broke one of the earlier ones, but in doing so made it obvious that the rotation point was too far to the left.  Fiddling with that (and with an 8px centerpoint)  <br>
+so the  trick here is that the balls rotation is such that at 180 degrees it's FLIPPED,  This would be more obvious with squares, so maybe I'll try that. 
+<div class="ring core"></div>
+
+<div class="ball3"></div>
+  <ul class="orbitlist orbit3">
+    <li><div class="ball2 orbit"></li>
+    <li><div class="ball2 orbit"></li>
+    <li><div class="ball2 orbit"></li>
+      <li><div class="ball2 orbit"></li>
+  </ul>
+</div>
+
+
+<div class="box2">
+Trying Squares.  Well, crap, that hypothesis was wrong.  Fiddling more
+  <div class="ring core"></div>
+  
+  <div class="ball3"></div>
+    <ul class="orbitlist orbit3">
+      <li><div class="square orbit"></li>
+      <li><div class="square orbit"></li>
+      <li><div class="square orbit"></li>
+        <li><div class="square orbit"></li>
+    </ul>
+  </div>
+  
+  <div class="box2">
+Ok, that's curious.  The trick was putting a POSITIVE value in the OH GOD I'M AN IDIOT - Positive Y value is down from top - I was putting in a negative value.       <div class="ring core"></div>
+      
+      <div class="ball3"></div>
+        <ul class="orbitlist orbit4">
+          <li><div class="square orbit"></li>
+          <li><div class="square orbit"></li>
+          <li><div class="square orbit"></li>
+            <li><div class="square orbit"></li>
+        </ul>
+      </div>
+
+      </div>
+  </body>
+</html>

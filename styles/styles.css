@@ -62,8 +62,8 @@ body {
 
 .main {
   /* border: 2px solid red; */
-  min-width: 100%;
-  border: 1px solid teal;
+  min-width: 30rem;
+  border: 2px solid teal;
   padding: 1rem;
 }
 

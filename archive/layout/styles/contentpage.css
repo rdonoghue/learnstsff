@@ -1,0 +1,39 @@
+/* BODY */
+
+main {
+  display: grid;
+  grid-template-columns: calc(100% - 20rem) auto;
+  grid-template-rows: auto;
+  gap: 1rem;
+  margin: 1rem;
+  gap: 1rem;
+  min-height: calc(100vh - 8rem);
+}
+
+article {
+  margin: 1rem 4rem 1rem 4rem;
+  grid-column-start: 1;
+}
+
+/* NAVIGATION */
+nav {
+  border: 0;
+  grid-column-start: 2;
+}
+
+.toc {
+  position: sticky;
+  top: 1rem;
+}
+
+.toc ul {
+  padding-left: 1rem;
+}
+
+.toc li {
+  list-style-type: none;
+}
+.h2toc {
+  text-indent: 1rem;
+  list-style-type: none;
+}
