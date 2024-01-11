@@ -1,183 +1,103 @@
-.setofboxes {
-  font-family: "Jost", sans-serif;
-  color: var(--color-text);
-  font-size: 1.15rem;
-  line-height: 1.75rem;
-  background: linear-gradient(
-    70deg,
-    var(--background-color),
-    var(--background-color-shift)
-  );
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.box2 {
-  display: block;
-  height: 425px;
-  width: 425px;
-  border: 2px solid black;
-  border-radius: 1rem;
+ul.displaycard > li > :nth-last-child(2) {
   position: relative;
-  overflow: hidden;
-  margin: 1rem;
-  padding: 1rem;
-}
-
-.nav {
-  display: flex;
-  width: 100%;
-}
-
-.pagetitle {
-  padding: 0.5rem 4rem;
-}
-
-.ballback {
-  background-color: navy;
-  clip-path: circle(50% at 0 0);
-  transition: all 400ms ease;
-  border: 3px solid pink;
-}
-
-.ballback:hover {
-  clip-path: circle(100%);
+  display: block;
+  border: 1px solid gray;
 }
 
 .ball {
   height: 30px;
   width: 30px;
-  background-color: navy;
   clip-path: circle(50%);
   position: absolute;
-  animation: 5s bounce infinite ease-in-out;
-}
-
-@keyframes bounce {
-  0% {
-    top: 10px;
-    left: 10px;
-  }
-
-  50% {
-    top: 385px;
-    left: 385px;
-  }
-
-  100% {
-    top: 10px;
-    left: 10px;
-  }
-}
-
-.smallbox {
-  height: 50px;
-  width: 50px;
-  position: absolute;
-  background-color: gray;
-  top: 20px;
-  left: 20px;
-}
-
-.mote1 {
-  height: 6px;
-  width: 6px;
-  background-color: yellow;
-  clip-path: circle(50%);
-  position: absolute;
-  top: calc(50% - 3px);
-  left: calc(50% - 3px);
-  text-wrap: wrap;
-
-  /* animation: 5s bounce infinite ease-in-out; */
 }
 
 .ball2 {
   height: 30px;
   width: 30px;
-
   clip-path: circle(50%);
-  position: absolute;
-  /* animation: 10s orbit infinite ease-in-out; */
 }
 
-.ball3 {
-  height: 8px;
-  width: 8px;
+.smallball {
+  height: 10px;
+  width: 10px;
+  clip-path: circle(50%);
+}
+.square {
+  height: 30px;
+  width: 30px;
+  /* position: absolute; */
+}
+
+.ring {
+  height: 200px;
+  width: 200px;
   clip-path: circle(50%);
   position: absolute;
+  background-color: rgba(0, 0, 128, 0.3);
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+}
+
+.blue {
+  background-color: navy;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
   background-color: red;
-  top: calc(50% - 4px);
-  left: calc(50% - 4px);
+}
+
+.bounce-diagonal {
+  animation: 3s bounce infinite ease-in-out;
+  animation-delay: -0.75s;
+}
+
+.circle-path {
+  clip-path: circle(50%);
+  position: absolute;
 }
 
 .core {
-  background-color: navy;
   top: calc(50% - 15px);
   left: calc(50% - 15px);
 }
 
 .orbit {
-  background-color: orange;
   position: absolute;
 }
 
-.orbit1 {
-  background-color: orange;
-
-  top: calc(50% - 15px - (100px * cos(0)));
-  left: calc(50% - 15px + (100px * sin(0)));
-}
-
-.orbit2 {
-  background-color: pink;
-
-  top: calc((50% - 15px) - (100px * cos(90deg)));
-  left: calc((50% - 15px) + (100px * sin(90deg)));
-}
-
-.orbit3 {
-  background-color: yellowgreen;
-
-  top: calc((50% - 15px) - (100px * cos(180deg)));
-  left: calc((50% - 15px) + (100px * sin(180deg)));
-}
-
-/* .orbit3 {
-  background-color: pink;
-
-  top: calc(50% - 15px - 100px * cos(60));
-  left: calc(50% - 15px + 100px * sin(60));
-}
-.orbit4 {
-  top: calc(50% - 15px - 100px * cos(90));
-  left: calc(50% - 15px + 100px * sin(90));
-}
-.orbit5 {
-  top: calc(50% - 15px - 100px * sin(120));
-  left: calc(50% - 15px + 100px * cos(120));
-}
-.orbit6 {
-  top: calc(50% - 15px - 100px * sin(150));
-  left: calc(50% - 15px + 100px * cos(150));
-}
-
-.orbit7 {
-  top: calc(50% - 15px - 100px * sin(180));
-  left: calc(50% - 15px + 100px * cos(180));
-} */
-
-.orbiter {
+.simple-rotate {
   --angle: 360deg;
 
   position: absolute;
-  background-color: orange;
-
   top: calc(50% - 15px - (100px * cos(var(--angle))));
   left: calc(50% - 15px + (100px * sin(var(--angle))));
   animation: 2s rotate infinite ease-in-out;
+}
+
+.simple-rotate-no-ease {
+  --angle: 360deg;
+
+  position: absolute;
+  top: calc(50% - 15px - (100px * cos(var(--angle))));
+  left: calc(50% - 15px + (100px * sin(var(--angle))));
+  animation: 2s rotate infinite;
+}
+
+.simple-rotate-fast {
+  --angle: 360deg;
+
+  position: absolute;
+  top: calc(50% - 15px - (100px * cos(var(--angle))));
+  left: calc(50% - 15px + (100px * sin(var(--angle))));
+  animation: 0.36s rotate infinite ease-in-out;
 }
 
 @keyframes rotate {
@@ -217,12 +137,27 @@
   }
 }
 
+@keyframes bounce {
+  0% {
+    top: 10px;
+    left: 10px;
+  }
+
+  50% {
+    top: calc(17rem - 0px);
+    left: calc(20rem - 0px);
+  }
+
+  100% {
+    top: 10px;
+    left: 10px;
+  }
+}
+
 .translator {
   --angle: 360deg;
 
   position: absolute;
-  background-color: orange;
-
   top: calc(50% - 15px);
   left: calc(50% - 15px);
   animation: 5s translatorbit2 infinite ease;
@@ -331,12 +266,313 @@
   }
 }
 
+.working-spin {
+  /* top: 50px; */
+  /* margin-top: calc(50% - 15px); */
+  top: calc(50% - 15px);
+  left: calc(50% - 115px);
+  /* left: 50px; */
+  transform-origin: 100px center;
+  position: relative;
+  animation: thingspin 3s linear infinite;
+}
+
+.offset-spin-left {
+  top: calc(50% - 5px);
+  left: calc(50% - 100px);
+  transform-origin: 60px center;
+  position: absolute;
+  animation: thingspin 2.5s linear infinite;
+}
+
+.offset-spin-right {
+  top: calc(50% - 5px);
+  left: calc(50% + -20px);
+  transform-origin: 60px center;
+  position: absolute;
+  animation: thingspin 3s linear reverse infinite;
+}
+
+.offset-spin-up {
+  top: calc(50% - 45px);
+  left: calc(50% + -60px);
+  transform-origin: 60px center;
+  position: absolute;
+  animation: thingspin 3s linear reverse infinite;
+  animation-delay: -0.5s;
+}
+
+.offset-spin-down {
+  top: calc(50% + 35px);
+  left: calc(50% + -60px);
+  transform-origin: 60px center;
+  position: absolute;
+  animation: thingspin 2.75s linear reverse infinite;
+  /* animation-delay: -0.5s; */
+}
+
+.delay1 {
+  animation-delay: -1s;
+}
+
+.delay2 {
+  animation-delay: -2s;
+}
+
+.spin2 {
+  /* top: 50px; */
+  /* margin-top: calc(50% - 15px); */
+  top: calc(50% - 15px);
+  left: calc(50% - 100px - 30px);
+  /* left: 50px; */
+  transform-origin: 130px center;
+  position: relative;
+  animation: thingspin 3s linear infinite;
+}
+
+.spin3 {
+  /* top: 50px; */
+  /* margin-top: calc(50% - 15px); */
+  top: calc(50% - 15px);
+  left: calc(50% - 100px - 15px);
+  /* left: 50px; */
+  transform-origin: 115px center;
+  position: relative;
+  animation: thingspin 3s linear infinite;
+}
+
+@keyframes thingspin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+.spinsquare {
+  width: 100px;
+  height: 100px;
+  top: calc(50%);
+  left: calc(50%);
+  transform-origin: top left; /* The Pivot! */
+  position: relative;
+  background-color: limegreen;
+  animation: thingspin 3s linear infinite;
+}
+
+.orbitlist li {
+  list-style-type: none;
+  padding: 0;
+  display: block;
+  position: absolute;
+}
+
+.orbit1 li {
+  top: calc(50% - 15px);
+  left: calc(50% - 100px - 15px);
+  transform-origin: 115px center;
+  animation: thingspin 3s linear reverse infinite;
+}
+
+.orbitlist li:nth-child(2) {
+  animation-delay: -1s;
+}
+.orbitlist li:nth-child(3) {
+  animation-delay: -2s;
+}
+
+.variable-orbitlist li {
+  list-style-type: none;
+  padding: 0;
+  display: block;
+  position: absolute;
+}
+
+.variable-orbitlist li:nth-child(1) {
+  top: calc(50% - 15px);
+  left: calc(50% - 100px - 15px);
+  transform-origin: 115px center;
+  animation: thingspin 3s linear reverse infinite;
+}
+
+.variable-orbitlist li:nth-child(2) {
+  top: calc(50% - 15px);
+  left: calc(50% - 50px - 15px);
+  transform-origin: 65px center;
+  animation: thingspin 3s linear reverse infinite;
+  animation-delay: -1s;
+}
+.variable-orbitlist li:nth-child(3) {
+  top: calc(50% - 15px);
+  left: calc(50% - 60px - 15px);
+  transform-origin: 75px center;
+  animation: thingspin 3s linear reverse infinite;
+  animation-delay: -2s;
+}
+
+.variable-orbitlist li:nth-child(4) {
+  top: calc(50% - 5px);
+  left: calc(50% - 85px - 5px);
+  transform-origin: 90px center;
+  animation: thingspin 2s linear infinite;
+}
+
+.spinrect {
+  width: 100px;
+  height: 30px;
+  top: calc(50% - 15px);
+  left: calc(50% - 100px);
+  transform-origin: right 50%; /* The Pivot! */
+  position: absolute;
+  background-color: limegreen;
+
+  animation: thingspin 3s linear infinite;
+}
+/*
+.setofboxes {
+  font-family: "Jost", sans-serif;
+  color: var(--color-text);
+  font-size: 1.15rem;
+  line-height: 1.75rem;
+  background: linear-gradient(
+    70deg,
+    var(--background-color),
+    var(--background-color-shift)
+  );
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.box2 {
+  display: block;
+  height: 425px;
+  width: 425px;
+  border: 2px solid black;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+}
+
+.pagetitle {
+  padding: 0.5rem 4rem;
+}
+
+.ballback {
+  background-color: navy;
+  clip-path: circle(50% at 0 0);
+  transition: all 400ms ease;
+  border: 3px solid pink;
+}
+
+.ballback:hover {
+  clip-path: circle(100%);
+}
+
+.smallbox {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  background-color: gray;
+  top: 20px;
+  left: 20px;
+}
+
+.mote1 {
+  height: 6px;
+  width: 6px;
+  background-color: yellow;
+  clip-path: circle(50%);
+  position: absolute;
+  top: calc(50% - 3px);
+  left: calc(50% - 3px);
+  text-wrap: wrap;
+
+  animation: 5s bounce infinite ease-in-out; 
+}
+
+.ball2 {
+  height: 30px;
+  width: 30px;
+
+  clip-path: circle(50%);
+  position: absolute;
+
+}
+
+.ball3 {
+  height: 8px;
+  width: 8px;
+  clip-path: circle(50%);
+  position: absolute;
+  background-color: red;
+  top: calc(50% - 4px);
+  left: calc(50% - 4px);
+}
+
+.core {
+  background-color: navy;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+}
+
+.orbit {
+  background-color: orange;
+  position: absolute;
+}
+
+.orbit2 {
+  background-color: pink;
+
+  top: calc((50% - 15px) - (100px * cos(90deg)));
+  left: calc((50% - 15px) + (100px * sin(90deg)));
+}
+
+.orbit3 {
+  background-color: yellowgreen;
+
+  top: calc((50% - 15px) - (100px * cos(180deg)));
+  left: calc((50% - 15px) + (100px * sin(180deg)));
+}
+
+/* .orbit3 {
+  background-color: pink;
+
+  top: calc(50% - 15px - 100px * cos(60));
+  left: calc(50% - 15px + 100px * sin(60));
+}
+.orbit4 {
+  top: calc(50% - 15px - 100px * cos(90));
+  left: calc(50% - 15px + 100px * sin(90));
+}
+.orbit5 {
+  top: calc(50% - 15px - 100px * sin(120));
+  left: calc(50% - 15px + 100px * cos(120));
+}
+.orbit6 {
+  top: calc(50% - 15px - 100px * sin(150));
+  left: calc(50% - 15px + 100px * cos(150));
+}
+
+.orbit7 {
+  top: calc(50% - 15px - 100px * sin(180));
+  left: calc(50% - 15px + 100px * cos(180));
+} 
+
+
+
 .positor {
   position: absolute;
   background-color: limegreen;
 
   object-position: 250px 125px;
-  /* animation: 5s translatorbit2 infinite ease; */
+
 }
 
 .tracker {
@@ -353,32 +589,12 @@
     offset-distance: 100%;
   }
 }
-
-.deconstruct {
-  width: 100px;
-  height: 100px;
-  margin-top: 50px;
-  transform-origin: 200% center;
-  position: relative;
-  animation: thingspin 3s linear infinite;
-}
-
+*/
 /* What is Transform-origin doing? */
 /* OH!  It's setting the center of the rotation OUTSIDE THE SHAPE! */
 
 /* Ok, need to try this with something else */
-
-.spinsquare {
-  width: 100px;
-  height: 100px;
-  top: calc(50% - 25px);
-  left: calc(50%);
-  transform-origin: top left; /* The Pivot! */
-  position: relative;
-  background-color: limegreen;
-  animation: thingspin 3s linear infinite;
-}
-
+/*
 @keyframes despin {
   100% {
     transform: rotate(-360deg);
@@ -388,7 +604,7 @@
 .thingee {
   width: 100px;
   height: 100px;
-  margin-top: 180px;
+  margin-top: 5rem;
   transform-origin: 200% center;
   position: relative;
   animation: thingspin 3s linear infinite;
@@ -402,22 +618,6 @@ thingee:before {
 
   animation: thingspin 3s linear reverse infinite;
 }
-@keyframes thingspin {
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-
-.ring {
-  height: 200px;
-  width: 200px;
-
-  clip-path: circle(50%);
-  position: absolute;
-  background-color: rgba(0, 0, 128, 0.3);
-  top: calc(50% - 100px);
-  left: calc(50% - 100px);
-}
 
 .ball3 {
   height: 8px;
@@ -429,40 +629,14 @@ thingee:before {
   left: calc(50% - 4px);
 }
 
-.spinrect {
-  width: 200px;
-  height: 20px;
-  top: calc(50% - 10px);
-  left: calc(50%);
-  transform-origin: left 50%; /* The Pivot! */
-  position: absolute;
-  background-color: limegreen;
-
-  animation: thingspin 3s linear infinite;
-}
-
 @keyframes despin {
   100% {
     transform: rotate(-360deg);
   }
 }
-
+*/
 /* Ok, this works, though it reveals I'm not quite centering thins qhwere I think I am */
-
-.orbitlist li {
-  list-style-type: none;
-  padding: 0;
-  display: block;
-  position: absolute;
-}
-
-.orbit1 li {
-  top: calc(50% - 15px);
-  left: calc(50% + 100px);
-  transform-origin: -107px center;
-  animation: thingspin 3s linear reverse infinite;
-}
-
+/*
 .orbit2 li {
   top: calc(50% - 15px);
   left: calc(50% + 100px);
@@ -470,14 +644,7 @@ thingee:before {
   animation: thingspin 3s linear reverse infinite;
 }
 
-.orbit3 li {
-  top: calc(50% - 15px);
-  left: calc(50% + 100px);
-  transform-origin: -107px center;
-  /* transform: rotate(45deg); */
-  /* transform: rotate(180deg); */
-  animation: thingspin 3s linear reverse infinite;
-}
+
 
 .orbit4 li {
   top: calc(50% - 15px);
@@ -494,21 +661,7 @@ thingee:before {
 }
 .orbit3 li:nth-child(4) {
   transform: rotate(270deg);
-} */
+} 
 
-.orbitlist li:nth-child(2) {
-  animation-delay: -1s;
-}
-.orbitlist li:nth-child(3) {
-  animation-delay: -2s;
-}
 
-.square {
-  height: 30px;
-  width: 30px;
-
-  /* clip-path: circle(50%); */
-  position: absolute;
-  background-color: blue;
-  /* animation: 10s orbit infinite ease-in-out; */
-}
+*/

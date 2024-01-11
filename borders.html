@@ -3,62 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Jost:wght@300&family=Nanum+Myeongjo:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@200;400;700&family=Montserrat:wght@400;600;800&family=Nunito:ital,wght@0,300;1,300&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/site.css" />
+    <link rel="stylesheet" href="./styles/cardgallery.css" />
     <link rel="stylesheet" href="./styles/borders.css" />
 
-    <title>Document</title>
+    <title>Borders & Shapes</title>
   </head>
   <body>
-    <div class="nav">
-      <div class="pagetitle"><h2>Border Tricks</h2></div>
-      <div><a href="/index.html">Home</a></div>
-    </div>
-    <div class="stampholder">
-      <div class="holder">
-        <div class="stamp3"></div>
-        <p class="caption">
-          Mixing border radius number for corners to get this kind of card
-          effect. I dig it.
-        </p>
-      </div>
-      <div class="holder">
-        <div class="stamp4">
-          <div class="innerstamp">foo</div>
-        </div>
-      </div>
-      <div class="holder">
-        <div class="stamp5"></div>
-      </div>
-
-      <div class="holder">
-        <div class="showcase bg56">
-          <div class="inset1">3rem</div>
-        </div>
-        <p class="caption">total aside here to try a border thing</p>
-      </div>
-
-      <div class="holder">
-        <div class="showcase bg56">
-          <div class="inset2">
-            calc(3rem - padding)<br />Seems like it's a smoother match. Good for
-            cards!
+    <header>
+      <ul class="pagehead">
+        <li>Borders & Shapes</li>
+        <li>Simple Border & Shape Tricks</li>
+        <li><a href="/index.html">Home Link</a></li>
+      </ul>
+    </header>
+    <main>
+      <ul class="displaycard">
+        <li>
+          <div><div class="stamp odd-curves"></div></div>
+          <div>
+            Mixing border radius number for corners to get this kind of card
+            effect. I dig it.
           </div>
-        </div>
-        <p class="caption">total aside here to try a border thing</p>
-      </div>
+        </li>
+        <li>
+          <div>
+            <div class="stamp diag lemon">
+              <div class="reversestamp"></div>
+            </div>
+          </div>
+          <div>Not really a border, just wanted to see the effect</div>
+        </li>
+        <li>
+          <div>
+            <div class="stamp rounded">
+              <div class="smallstamp rounded"></div>
+            </div>
+          </div>
+          <div>
+            These both have 3rem border radii, but notice that they there's some
+            weirdneess around the corners.
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="stamp rounded diag">
+              <div class="smallstamp rounded"></div>
+            </div>
+          </div>
+          <div>
+            For solid colors, I can just use a border, of course, but my concern
+            is for situations where I use the underlying pattern for border
+            effects.
+          </div>
+        </li>
 
-      <div class="holder">
-        <div class="showcase bg1"></div>
-        <p class="caption">Blank</p>
-      </div>
-    </div>
+        <li>
+          <div>
+            <div class="stamp rounded">
+              <div class="smallstamp adjusted-rounded-bad"></div>
+            </div>
+          </div>
+          <div>
+            that's a 1rem border (the squares are 16 & 14rem respectively).
+            first-attempt was to subract the padding (1rem) from the radius
+            (3rem), but the 2rem radius still looks off.
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="stamp rounded">
+              <div class="smallstamp adjusted-rounded"></div>
+            </div>
+          </div>
+          <div>
+            But if I take that 1 rem difference and divide it in half, then
+            subtract <b>that</b>, that seems to do the trick.
+          </div>
+        </li>
+        <li>
+          <div><div class="circle-corner remborder"></div></div>
+          <div>Circle made using border-radius of 50%</div>
+        </li>
+        <li>
+          <div><div class="circle-path remborder"></div></div>
+          <div>
+            Circle made using a clipping path. Note what it does to borders -
+            don't want to do that by accident
+          </div>
+        </li>
+        <li>
+          <div><div class="arch-path remborder"></div></div>
+          <div>
+            Difference is not huge for a simple circle, but it's worth knowing
+            both because clip-path supports much more robust shapes.
+          </div>
+        </li>
+        <li>
+          <div></div>
+          <div></div>
+        </li>
+        <li>
+          <div></div>
+          <div></div>
+        </li>
+        <li>
+          <div></div>
+          <div></div>
+        </li>
+      </ul>
+    </main>
   </body>
 </html>

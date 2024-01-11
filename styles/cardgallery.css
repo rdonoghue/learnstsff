@@ -1,30 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-  --background-color: rgb(67, 97, 153);
-  --background-color-shift: rgb(87, 107, 173);
-  --color-light: hsl(219, 39%, 80%);
-  --color-dark: rgb(17, 24, 22);
-  --color-text: rgb(31, 31, 3);
-
-  --color-bold: rgb(233, 196, 106);
-  --color-highlight: rgba(233, 196, 106, 0.2);
-
-  --color1: rgb(94, 130, 122);
-  --color2: rgb(42, 157, 143);
-  --color3: hsl(43, 64%, 86%);
-  --color4: rgb(244, 162, 97);
-  --color5: rgb(231, 111, 81);
-
-  --stampwidth: 16rem;
-  --stampheight: 16rem;
-  --stamp-padding: 1rem;
-
-  --square: 4rem;
-}
-
 /* BASE APPEARANCE  */
 
 body {
@@ -59,8 +32,6 @@ header ul.pagehead {
 header ul.pagehead li {
   display: block;
   list-style: none;
-  color: blue;
-  border: 2px solid black;
 }
 
 header ul.pagehead li:nth-child(1) {
@@ -115,4 +86,8 @@ ul.displaycard > li {
   flex-direction: column;
   background-image: url("/assets/paper.png");
   box-shadow: 4px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+ul.displaycard > li > :nth-last-child(2) {
+  min-height: 20rem;
 }

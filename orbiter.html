@@ -6,141 +6,331 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Jost:wght@300&family=Nanum+Myeongjo:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@200;400;700&family=Montserrat:wght@400;600;800&family=Nunito:ital,wght@0,300;1,300&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/site.css" />
+    <link rel="stylesheet" href="./styles/cardgallery.css" />
     <link rel="stylesheet" href="./styles/orbiter.css" />
 
-    <title>Slides</title>
+    <title>Orbiting Animation</title>
   </head>
-  <body><div class="nav">
-    <div class="pagetitle"><h2>Orbiting Animation</h2></div>
-    <div><a href="/index.html">Home</a></div>
-    
-  </div>
-  
-  <div class="setofboxes">
-
-    <div class="box2">
-      <div class="ball"></div>
-      Just moving it back and forth.
-    </div>
-
-    <div class="box2">
-      <div class="smallbox"><div class="mote1"></div></div>
-      <br><br><br>Just looking at a dot in a box.
-    </div>
-
-    <div class="box2">
-      not 100% clear why the ease transition isn't working. it's fine with the
-      bounce - maybe something about the calculations. Is there a way to smooth
-      it, or do I need to make the increments into 1 degree with javascript?
-      <div class="ball2 core"></div>
-      <div class="ball2 orbiter"></div>
-    </div>
-
-    <div class="box2">
-      using the "translate" animation is definitely smoother, but if you look closely, you can see that the circle's approximate with the number of anchor points this currently uses.  It looks smoother than it did with half as many, so I could absolutely do it 1 degree at a time, but I'd need a tool to generate that css, since there's no way I do it by hand. 
-      <div class="ball2 core"></div>
-      <div class="ball2 orbit translator"></div>
-    </div>
-
-    <div class="box2">
-      motion path
-      <div class="ball2 core"></div>
-      <div class="ball2 orbit tracker"></div>
-    </div>
-
-    <div class="box2">
-      something from a code pen I haven't parsed yet
-      <div class="ball2 core"></div>
-      <div class="ball2 orbit thingee"></div>
-    </div>
-
-    <div class="box2">
-      ok, building it reveals the secret sauce is that it's a straight rotation,
-      but the origin is outside of the object, so it orbits that.
-      <div class="ball2 core"></div>
-      <div class="ball2 orbit deconstruct"></div>
-    </div>
-
-    <div class="box2">
-      Trying moving the pivot point just to illustrate
-      <div class="ball2 core"></div>
-      <div class="spinsquare"></div>
-    </div>
-
-    <div class="box2">
-Ok, next, let's set up an LI so that we can apply Nth and animation delay to do several of these? <br>
-Ok, this works, though it reveals I'm not quite centering things where I think I am. also, the delay on start is a little odd - I suspect there's a way to start at the end or middle?     <div class="ball2 core"></div>
-<div class="core"></div>
-      <ul class="orbitlist orbit1">
-        <li><div class="ball2 orbit"></li>
-        <li><div class="ball2 orbit"></li>
-        <li><div class="ball2 orbit"></li>
+  <body>
+    <header>
+      <ul class="pagehead">
+        <li>Orbiting Animation</li>
+        <li>How I learned to make a good looking orbit</li>
+        <li><a href="/index.html">Home Link</a></li>
       </ul>
-    </div>
-
-    <div class="box2">
-     Managed to get past the lagged start by using negative animation delay, which definitely seems like a good trick.     <div class="ball2 core"></div>
-      <div class="ring core"></div>
-            <ul class="orbitlist orbit2">
-              <li><div class="ball2 orbit"></li>
-              <li><div class="ball2 orbit"></li>
-              <li><div class="ball2 orbit"></li>
-            </ul>
+    </header>
+    <main>
+      <ul class="displaycard">
+        <li>
+          <div>
+            <div class="ball blue core"></div>
           </div>
+          <div>Ok, got a ball.</div>
+        </li>
+        <li>
+          <div>
+            <div class="ball blue bounce-diagonal"></div>
+          </div>
+          <div>
+            Starting with moving it back and forth. Making a note that it goes
+            17 rems down and 20 left, so that's about my area to play with.
+            (Used animation-delay to start it from the middle)
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+
+            <div class="ball orange simple-rotate"></div>
+          </div>
+          <div>
+            Ok, so this moves through 360 degrees in 10 steps, and while it
+            seems the most obvious solution, it's clearly janky as heck. It
+            might work if I had it go 1 degree at a time, but that is very
+            unappealing.
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+
+            <div class="ball orange simple-rotate-no-ease"></div>
+          </div>
+          <div>
+            turning off ease-in-and-out doesn't seem to do much of anything at
+            all.
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+
+            <div class="ball orange simple-rotate-fast"></div>
+          </div>
+          <div>
+            speeding it up to .36 seconds per rotation looks ok, but way to fast
+            for what I want. That said, at the very fast speeds, you get
+            interesting patterns of where the images appear
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+            <div class="ball orange translator"></div>
+          </div>
+          <div>
+            This one uses the
+            <i>translate</i>
+            function to move, and it's much smoother, but if you look closely,
+            it's a kind of wiggly path.
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+            <div class="ball orange translator"></div>
+            <div class="ring"></div>
+
+          </div>
+          <div>
+           Addign a ring to make the sawing motion a little more apparent.
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+            <div class="ball2 orange working-spin"></div>
+            <div class="ring"></div>
+
+          </div>
+          <div>
+            So, I found a codepen that made rotate work by moving the offset. It
+            looked smooth, but puzzled me. And was also a little out of whack.
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="ring"></div>
+            <div class="ball blue core"></div>
+            <div class="ball2 orange spin2"></div>
+          </div>
+          <div>
+            Ok, there we go. The trick is that that the 30px ball, orbiting on
+            the OUTSIDE of center needs a 130px offset to both position AND
+            transition. I bet if I went to 115, for both, I could run on the
+            rim.
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+            <div class="ball2 orange spin3"></div>
+            <div class="ring"></div>
+
+          </div>
+          <div>
+            Yep, there we go, totally worked. Trick is to remember that it's not
+            center-to-center, it's center-to-outer-edge.
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+            <div class="spinsquare"></div>
+            <div class="ring"></div>
+
+          </div>
+          <div>
+            I feel like this gives a clearer sense of what's going on. In this
+            case, the transform origin is <i>top left</i>
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+            <div class="spinrect"></div>
+            <div class="ring"></div>
+
+          </div>
+          <div>This rectangle may make it even more clear.</div>
+        </li>
+
+
  
 
-          <div class="box2">
-Weird rotation is almost certainly about the center point.  Playing around with visualizing that. 
-            <div class="ball3"></div>
-            <div class="ring core"></div>
+        <li>
+          <div>
+            <div class="ball blue core"></div>
             <div class="spinrect"></div>
+            <div class="ball2 orange spin3"></div>
+            <div class="ring"></div>
+
           </div>
+          <div>like so</div>
+        </li>
 
-<div class="box2">
-I broke one of the earlier ones, but in doing so made it obvious that the rotation point was too far to the left.  Fiddling with that (and with an 8px centerpoint)  <br>
-so the  trick here is that the balls rotation is such that at 180 degrees it's FLIPPED,  This would be more obvious with squares, so maybe I'll try that. 
-<div class="ring core"></div>
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+            <ul class="orbitlist orbit1">
+              <li><div class="ball2 orange"></li>
+              <li><div class="ball2 orange"></li>
+              <li><div class="ball2 orange"></li>
 
-<div class="ball3"></div>
-  <ul class="orbitlist orbit3">
-    <li><div class="ball2 orbit"></li>
-    <li><div class="ball2 orbit"></li>
-    <li><div class="ball2 orbit"></li>
-      <li><div class="ball2 orbit"></li>
-  </ul>
-</div>
+            </ul>
+            <div class="ring"></div>
 
 
-<div class="box2">
-Trying Squares.  Well, crap, that hypothesis was wrong.  Fiddling more
-  <div class="ring core"></div>
-  
-  <div class="ball3"></div>
-    <ul class="orbitlist orbit3">
-      <li><div class="square orbit"></li>
-      <li><div class="square orbit"></li>
-      <li><div class="square orbit"></li>
-        <li><div class="square orbit"></li>
+          </div>
+          <div>
+            Given <b>that</b>, I can string a few of these together in an unordered list. 
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+            <ul class="orbitlist orbit1">
+              <li><div class="ball orange"></li>
+              <li><div class="ball orange"></li>
+              <li><div class="ball orange"></li>
+
+            </ul>
+            <div class="ring"></div>
+
+
+          </div>
+          <div>
+            Ok, I have been using 2 different ball styles throughout, with the difference being that the orange are NOT position:absolute.  If I swap to the others it looks like I get a 15px offset, which explains some weirdness I've encountered.
+          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+            <ul class="orbitlist orbit1">
+              <li><div class="square green"></li>
+              <li><div class="square green"></li>
+              <li><div class="square green"></li>
+
+            </ul>
+            <div class="ring"></div>
+
+          </div>
+          <div>
+One more time with squares, just because they look cool.          </div>
+        </li>
+
+        <li>
+          <div>
+            <div class="ball blue core"></div>
+            <ul class="variable-orbitlist">
+              <li><div class="square green"></li>
+              <li><div class="ball2 green"></li>
+              <li><div class="ball2 orange"></li>
+                <li><div class="smallball red"></li>
+
+
+            </ul>
+            <div class="ring"></div>
+
+          </div>
+          <div>
+Seeing how different I can make the orbits. By moving the animation call into the LI, I cna go pretty nuts, and that's without skewing the rotations, which I should play with       </li>
+
+<li>
+  <div>
+    <ul class="variable-orbitlist">
+      <li><div class="square green"></li>
+      <li><div class="ball2 green"></li>
+      <li><div class="ball2 orange"></li>
+        <li><div class="smallball red"></li>
+
+
     </ul>
-  </div>
-  
-  <div class="box2">
-Ok, that's curious.  The trick was putting a POSITIVE value in the OH GOD I'M AN IDIOT - Positive Y value is down from top - I was putting in a negative value.       <div class="ring core"></div>
-      
-      <div class="ball3"></div>
-        <ul class="orbitlist orbit4">
-          <li><div class="square orbit"></li>
-          <li><div class="square orbit"></li>
-          <li><div class="square orbit"></li>
-            <li><div class="square orbit"></li>
-        </ul>
-      </div>
 
-      </div>
+  </div>
+  <div>
+Curious how it looks without the visible anchor.       </li>
+<li>
+  <div>
+    <div class="ball blue core"></div>
+    <div class="smallball red offset-spin-left"></div>
+    <div class="smallball red offset-spin-left delay1"></div>
+    <div class="smallball red offset-spin-left delay2 "></div>
+
+
+    <div class="smallball red offset-spin-right"></div>
+    <div class="smallball red offset-spin-right delay1"></div>
+    <div class="smallball red offset-spin-right delay2"></div>
+    <div class="ring"></div>
+
+
+  </div>
+  <div>
+    Messing with offsetting. I like the busy-ness of it.  I susepct I could do some handoff stuff to move things in successive half-circles, but there are almost certainly simpler ways to do that. 
+  </div>
+</li>
+<li>
+  <div>
+    <div class="ball blue core"></div>
+    <div class="smallball red offset-spin-left"></div>
+    <div class="smallball red offset-spin-left delay1"></div>
+    <div class="smallball red offset-spin-left delay2 "></div>
+
+
+    <div class="smallball red offset-spin-right"></div>
+    <div class="smallball red offset-spin-right delay1"></div>
+    <div class="smallball red offset-spin-right delay2"></div>
+    <div class="smallball red offset-spin-up"></div>
+    <div class="smallball red offset-spin-up delay1"></div>
+    <div class="smallball red offset-spin-up delay2"></div>
+    <div class="smallball red offset-spin-down"></div>
+    <div class="smallball red offset-spin-down delay1"></div>
+    <div class="smallball red offset-spin-down delay2"></div>
+    <div class="ring"></div>
+
+
+  </div>
+  <div>
+  Stunt - adding a third. Then a fourth.  Then messing with time a little.  At this point, if I want to mess with this more, I'd probably want to lean into javascript to track all the variables. 
+  </div>
+</li>
+
+        <li>
+          <div></div>
+          <div></div>
+        </li>
+        <li>
+          <div></div>
+          <div></div>
+        </li>
+        <li>
+          <div></div>
+          <div></div>
+        </li>
+        <li>
+          <div></div>
+          <div></div>
+        </li>
+        <li>
+          <div></div>
+          <div></div>
+        </li>
+      </ul>
+    </main>
   </body>
 </html>
