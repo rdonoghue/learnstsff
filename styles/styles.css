@@ -58,6 +58,7 @@ body {
   color: black;
   padding: 1rem;
   background-color: bisque;
+  margin: auto;
 }
 
 .main {
@@ -86,6 +87,7 @@ body {
   flex-direction: column;
   background-color: gray;
   gap: 1px;
+  margin: auto;
 }
 
 .toc li {

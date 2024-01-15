@@ -3,75 +3,106 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+
+    <title>Simple Sidebar Layout</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Jost:wght@300&family=Nanum+Myeongjo:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@200;400;700&family=Montserrat:wght@400;600;800&family=Nunito:wght@300&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="./styles/reset.css" />
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <title>Slides</title>
+    <link rel="stylesheet" href="./styles/site.css" />
+    <link rel="stylesheet" href="./styles/simple-sidebar.css" />
+    <link rel="stylesheet" href="./styles/frontpage.css" />
+
+    <script src="./scripts/script.js" type="module" defer></script>
   </head>
   <body>
-    <div class="page">
-        <div class="sidecontent">
-      <ul class="toc">
-        <li><a href="/animate/slideshow.html">Slideshow</a></li>
-        <li><a href="/animate/orbiter.html">Orbiter</a></li>
-        <li>
-          <a href="/animate/backgrounds/index.html">Animated Backgrounds</a>
-        </li>
-        <li><a href="background-gallery.html">Background Gallery</a></li>
-        <li><a href="/objects/borders.html">Messing with Borders</a></li>
-        <li><a href="/layout/sidebargrid.html">Basic Grid Layout</a></li>
-        <li><a href="/animate/zoomaround.html">Zoomaround</a></li>
-        <li><a href="/page-templates/simple-sidebar.html">Template Page</a></li>
-
-      </ul>
-
-    </div>
-    <div class="main">
-      <ul class="toc">
-        <li><a href="borders.html">Effects: Borders & Shapes</a></li>
-        <li><a href="background-effects.html">Effects: Backgrounds</a></li>
-        <li><a href="slideshow.html">Animation: Slideshows</a></li>
-        <li><a href="orbiter.html">Animation: Orbiter</a></li>
-        <li><a href="background-animations.html">Animation: Backgrounds</a></li>
-        <li><a href="sidebargrid.html">Layouts: Grid sidebar</a></li>
-        <li><a href="simple-sidebar.html">Layouts: Flex Sidebar</a></li>
-        <li><a href="cardlayout.html">Layouts: Simple Cards</a></li>
-        <li><a href="background-gallery.html">Gallery: Backgrounds</a></li>
-        <li><a href="zoomaround.html">Sandbox: Zoomaround</a></li>
-
-
-
-
-
-
-
-
-
-      </ul>
-
-
-            <ul>
-        <li>
-          <a href="https://getcssscan.com/css-box-shadow-examples"
-            >Box Shadow Gallery</a
-          >
-        </li>
-      </ul>
-
-      <h2>todo</h2>
-      <ul>
-        <li>Fix draggableness on Brandheim</li>
-        <li>Update Prosperity art credits</li>
-        <li>Less crappy navigation</li>
-        <li>dammit, it's bouncy again</li>
-      </ul>
-
-     
-    </div>
+    <header>Header</header>
+    <nav>Nav</nav>
+    <main>
+      <aside>
+        Sidebar
+        <ul>
+          <li><a href="/index.html">Back to Top</a></li>
+          <li><a href="borders.html">Effects: Borders & Shapes</a></li>
+          <li><a href="background-effects.html">Effects: Backgrounds</a></li>
+          <li><a href="animations.html">Animation: Odds and Ends</a></li>
+          <li><a href="orbiter.html">Animation: Orbiter</a></li>
+          <li>
+            <a href="background-animations.html">Animation: Backgrounds</a>
+          </li>
+          <li><a href="sidebargrid.html">Layouts: Grid sidebar</a></li>
+          <li><a href="simple-sidebar.html">Layouts: Flex Sidebar</a></li>
+          <li><a href="cardlayout.html">Layouts: Simple Cards</a></li>
+          <li><a href="background-gallery.html">Gallery: Backgrounds</a></li>
+          <li><a href="zoomaround.html">Sandbox: Zoomaround</a></li>
+        </ul>
+      </aside>
+      <article>
+        <h1>Content</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium,
+          at. Sit sequi aperiam perferendis quas reprehenderit nesciunt totam
+          debitis sed vero exercitationem assumenda, ut dolores incidunt iusto
+          sapiente! Facere, deserunt.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+          volutpat nunc turpis, at euismod mi elementum et. Aenean ac consequat
+          tortor. Suspendisse id pharetra dui, at vestibulum magna. In id
+          pretium nibh, et gravida sem. Phasellus felis velit, suscipit ut est
+          et, volutpat ultrices arcu. Suspendisse pulvinar, tellus a commodo
+          condimentum, lacus arcu sagittis nunc, in faucibus est quam a lectus.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lorem
+          massa, accumsan nec tellus et, lobortis sollicitudin mi. Nam vitae
+          sodales felis. Class aptent taciti sociosqu ad litora torquent per
+          conubia nostra, per inceptos himenaeos. Fusce aliquet lobortis nisi
+          sit amet tempus. Phasellus condimentum lectus sapien, ac dignissim
+          nibh pretium sit amet. Cras euismod odio non ligula pellentesque, in
+          sagittis sem posuere.
+        </p>
+        <h2>Heading 2</h2>
+        <p>
+          Fusce porta est at lacinia scelerisque. Phasellus at orci id mi
+          aliquam viverra a eu metus. Proin aliquet in urna vel luctus. Quisque
+          ullamcorper commodo tellus a pharetra. Class aptent taciti sociosqu ad
+          litora torquent per conubia nostra, per inceptos himenaeos. Nulla
+          facilisi. Mauris ullamcorper, turpis eget ullamcorper consectetur,
+          tellus neque posuere est, quis sollicitudin leo nibh lobortis nisl.
+          Donec arcu sapien, rutrum vel risus vitae, gravida fermentum elit.
+          Vestibulum non nisi et velit egestas venenatis sed eu urna. Praesent
+          mi eros, faucibus a nulla a, molestie placerat enim.
+        </p>
+        <p>
+          Quisque eget aliquet massa. Curabitur eget neque odio. Nunc vel sapien
+          tincidunt, convallis nibh at, sollicitudin eros. Quisque posuere,
+          velit at varius pellentesque, velit mauris vulputate eros, quis
+          elementum urna sem id magna. Proin id pellentesque mauris, eu
+          imperdiet tortor. Fusce et iaculis tortor. Aliquam sit amet tincidunt
+          quam, et hendrerit enim.
+        </p>
+        <h3>Heading 3</h3>
+        <p>
+          Sed mollis blandit leo, in porta nisi vulputate nec. Nam elementum
+          volutpat sodales. Vivamus aliquet egestas lorem, a ornare neque
+          gravida nec. Phasellus porttitor elit justo, quis dapibus nisl pretium
+          ac. Nam nec elit imperdiet lacus tempus suscipit. Maecenas vulputate
+          neque quis nibh eleifend, a consectetur magna interdum. Pellentesque
+          sit amet bibendum erat, sit amet dictum velit. Morbi sed dignissim
+          lacus, vel posuere mi. Curabitur accumsan, massa nec aliquam sagittis,
+          enim nulla tempus mi, vel eleifend odio sapien at diam. Quisque
+          gravida enim a ipsum eleifend tempus. Etiam eu efficitur dolor.
+          Quisque quis dui feugiat, porttitor quam sit amet, faucibus nunc.
+          Praesent commodo hendrerit odio ut ornare. Aenean placerat interdum
+          dui a gravida. Quisque sollicitudin sed eros sit amet imperdiet.
+        </p>
+      </article>
+    </main>
+    <footer>Footer</footer>
   </body>
 </html>

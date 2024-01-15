@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@200;400;700&family=Montserrat:wght@400;600;800&family=Nunito:ital,wght@0,300;1,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/site.css" />
+    <link rel="stylesheet" href="./styles/cardgallery.css" />
+    <link rel="stylesheet" href="./styles/background-animations.css" />
+
+    <title>Card Layout</title>
+  </head>
+  <body>
+    <header>
+      <ul class="pagehead">
+        <li>Card Layout</li>
+        <li>A single line of descriptive text</li>
+        <li><a href="/index.html">Home Link</a></li>
+      </ul>
+    </header>
+    <main>
+      <ul class="displaycard">
+        <li>
+          <div class="gridshift"></div>
+          <div>Gridshift</div>
+        </li>
+        <li>
+          <div class="gridshift2"></div>
+          <div>Gridshift2</div>
+        </li>
+        <li>
+          <div class="diagonal-stripes"></div>
+          <div>
+            Huh - this is ignoring the transition css(diagonal-stripes). I could
+            apparently do a rotate by putting a container in there.
+          </div>
+        </li>
+        <li>
+          <div class="diagonal-stripes2"></div>
+          <div>Giving a little offset makes a cool effect though.</div>
+        </li>
+        <li>
+          <div class="diagonal-stripes2"><div class="box"></div></div>
+          <div>
+            Ok, this is a pretty cool, potentially subtle effect for a border.
+            Could maybe add a color transition?
+          </div>
+        </li>
+        <li>
+          <div class="roundstamp-corner"></div>
+
+          <div>Mouseover for a fun fill effect</div>
+        </li>
+        <li>
+          <div></div>
+          <div></div>
+        </li>
+        <li>
+          <div></div>
+          <div></div>
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>
